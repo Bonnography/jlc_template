@@ -1,0 +1,66 @@
+tt_content {
+    text {
+        templateRootPaths {
+            10 = EXT:jlc_template/Resources/Private/Templates/ContentElements/
+        }
+
+        partialRootPaths {
+            10 = EXT:jlc_template/Resources/Private/Partials/ContentElements/
+        }
+
+        layoutRootPaths {
+            10 = EXT:jlc_template/Resources/Private/Layouts/ContentElements/
+        }
+
+        variables {
+            companyPageUid = TEXT
+            companyPageUid.value = {$page.companyPageUid}
+        }
+    }
+    textmedia {
+        templateRootPaths {
+            10 = EXT:jlc_template/Resources/Private/Templates/ContentElements/
+        }
+
+        partialRootPaths {
+            10 = EXT:jlc_template/Resources/Private/Partials/ContentElements/
+        }
+
+        layoutRootPaths {
+            10 = EXT:jlc_template/Resources/Private/Layouts/ContentElements/
+        }
+    }
+    cards < lib.contentElement
+    cards {
+        templateName = Cards
+        templateRootPaths {
+            10 = EXT:jlc_template/Resources/Private/Templates/ContentElements/
+        }
+
+        partialRootPaths {
+            10 = EXT:jlc_template/Resources/Private/Partials/ContentElements/
+        }
+
+        layoutRootPaths {
+            10 = EXT:jlc_template/Resources/Private/Layouts/ContentElements/
+        }
+
+        dataProcessing {
+            10 = Cbw\CbwTemplate\DataProcessing\ChildContentElementProcessor
+            10 {
+                references {
+                    fieldName = cards_container
+                    table = tt_content
+                }
+
+                as = cards
+            }
+        }
+    }
+
+    form_formframework {
+        layoutRootPaths {
+            10 = EXT:stroeerx_template/Resources/Private/Layouts/ContentElements/
+        }
+    }
+}

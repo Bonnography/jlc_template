@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2013-03-05T08:00:00Z" product-name="jlc_template">
+        <header/>
+        <body>
+            <trans-unit id="tt_content.cards.wizard.title">
+                <source>Cards Content - Element</source>
+            </trans-unit>
+            <trans-unit id="tt_content.cards.wizard.title">
+                <source>Display Cards - 2 or 3 in a row</source>
+            </trans-unit>
+
+            <trans-unit id="tt_content.cardsitem_header">
+                <source>Card Header</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

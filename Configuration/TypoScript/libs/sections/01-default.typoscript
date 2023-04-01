@@ -1,0 +1,39 @@
+page = PAGE
+
+page {
+    typeNum = 0
+
+    includeCSS.screen = typo3conf/ext/jlc_template/Resources/Public/css/jlc_template.min.css
+
+    includeJS {
+        5 = TEXT
+        5.stdWrap.value(
+         var pageId = {field:uid};
+        )
+    }
+
+    includeJSFooter {
+        default = typo3conf/ext/jlc_template/Resources/Public/js/default-libs.min.js
+        cbwtemplate = typo3conf/ext/jlc_template/Resources/Public/js/jlc_template.min.js
+    }
+
+
+    headerData < lib.header-Data
+
+    10 < lib.section-header
+
+    #    20 < lib.section-header-image
+
+    30 < lib.section-content
+
+
+    40 < lib.section-footer
+}
+
+[page["uid"] == 1]
+    page.bodyTagAdd = id="home"
+    [else]
+    page.bodyTagAdd = id="sub"
+[end]
+
+

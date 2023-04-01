@@ -1,0 +1,84 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Header" />
+<f:section name="Main">
+    <!-- Header Section Start -->
+    <header id="home" class="hero-area">
+<div class="container-fluid fixed-top scrolling-navbar header-nav-wrapper">
+    <div class="container ">
+        <div class="row">
+            <div class="codebomb-logo d-flex align-items-center col-9 col-md-6 col-xl-3">
+                <a href="/" class="navbar-brand"><img class="img-fluid" src="typo3conf/ext/jlc_template/Resources/Public/images/codebomb_logo.png" alt=""></a>
+            </div>
+            <div class="col-2 col-md-1 d-flex align-items-center d-xl-none">
+                <div id="menu-main-trigger">
+                    <div id="nav-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-main col-xl-9 pr-xl-0 order-xl-1 d-xl-flex align-items-lg-center justify-content-xl-center">
+                <nav id="menu-main">
+                    <ul class="menu-main__list">
+                        <li class="menu-main_item lvl1">
+                            <f:link.page pageUid="1" class="nav-link page-scroll menu-main_item__link lvl1" >Home</f:link.page>
+                        </li>
+                        <li class="menu-main_item lvl1">
+                            <f:link.page pageUid="1" section="services" class="nav-link page-scroll menu-main_item__link lvl1">Services</f:link.page>
+                        </li>
+                        <li class="menu-main_item lvl1">
+                            <f:link.page pageUid="1" section="features" class="nav-link page-scroll menu-main_item__link lvl1">Features</f:link.page>
+                        </li>
+                       <!-- <li class="menu-main_item lvl1">
+                            <a class="nav-link page-scroll menu-main_item__link lvl1" href="#showcase">Showcase</a>
+                        </li>
+                        -->
+                        <li class="menu-main_item lvl1">
+                            <f:link.page pageUid="1" section="contact" class="nav-link page-scroll menu-main_item__link lvl1">Kontakt</f:link.page>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+        <f:if condition="{data.uid} == 1">
+            <f:then>
+                <div class="overlay">
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="container">
+                    <div class="row space-100">
+                        <div class="col-lg-6 col-md-12 col-xs-12">
+                            <div class="contents">
+                                <h2 class="head-title">CodeBomb - Websolutions</h2>
+                                <p>Benjamin Bomberg - TYPO3 Webdeveloper <br></p>
+                                <div class="header-button">
+                                    <a href="#features" class="btn btn-border-filled">Zu den Leistungen</a>
+                                    <a href="#contact" class="btn btn-border page-scroll">Kontakt</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-xs-12 p-0">
+                            <div class="intro-img">
+                                <img class="img-fluid" src="typo3conf/ext/jlc_template/Resources/Public/images/CodeBomb.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </f:then>
+        </f:if>
+
+    </header>
+    <!-- Header Section End -->
+
+</f:section>
+</html>
