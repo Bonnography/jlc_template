@@ -1,6 +1,6 @@
 <?php
 
-namespace Cbw\CbwTemplate\ViewHelpers;
+namespace Jlc\JlcTemplate\ViewHelpers;
 
 
 use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;

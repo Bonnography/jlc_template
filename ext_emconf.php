@@ -18,7 +18,7 @@ $EM_CONF[$_EXTKEY] = [
     ],
     'autoload' => [
         'psr-4' => [
-            'Cbw\\CbwTemplate\\' => 'Classes',
+            'Jlc\\JlcTemplate\\' => 'Classes',
         ],
     ],
     'state' => 'stable',

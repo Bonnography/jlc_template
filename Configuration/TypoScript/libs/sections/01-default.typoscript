@@ -14,7 +14,7 @@ page {
 
     includeJSFooter {
         default = typo3conf/ext/jlc_template/Resources/Public/js/default-libs.min.js
-        cbwtemplate = typo3conf/ext/jlc_template/Resources/Public/js/jlc_template.min.js
+        Jlctemplate = typo3conf/ext/jlc_template/Resources/Public/js/jlc_template.min.js
     }
 
 

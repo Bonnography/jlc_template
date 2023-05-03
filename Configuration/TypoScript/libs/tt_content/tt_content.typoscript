@@ -97,7 +97,7 @@ tt_content {
             10 = EXT:jlc_template/Resources/Private/Layouts/ContentElements/
         }
 
-        dataProcessing.10 = Cbw\CbwTemplate\DataProcessing\ChildContentElementProcessor
+        dataProcessing.10 = Jlc\JlcTemplate\DataProcessing\ChildContentElementProcessor
         dataProcessing.10 {
             references {
                 table = tt_content

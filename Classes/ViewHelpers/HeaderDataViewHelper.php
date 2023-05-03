@@ -1,6 +1,6 @@
 <?php
 
-namespace Cbw\CbwTemplate\ViewHelpers;
+namespace Jlc\JlcTemplate\ViewHelpers;
 
 /**
  * This file is a fork of the "news" Extension for TYPO3 CMS.
