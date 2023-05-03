@@ -1,0 +1,57 @@
+
+renderingOptions:
+  submitButtonLabel: Submit
+type: Form
+identifier: jlehmannconstruction-kontaktform
+label: jlehmannconstruction-kontaktform
+prototypeName: standard
+renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    type: Page
+    identifier: page-1
+    renderables:
+      -
+        defaultValue: ''
+        type: Text
+        identifier: text-1
+        label: Vorname
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: Vorname
+      -
+        defaultValue: ''
+        type: Text
+        identifier: text-2
+        label: Nachname
+        validators:
+          -
+            identifier: NotEmpty
+        properties:
+          fluidAdditionalAttributes:
+            required: required
+            placeholder: Nachname
+      -
+        defaultValue: ''
+        type: Telephone
+        identifier: telephone-1
+        label: Telefonnummer
+        properties:
+          elementDescription: ''
+          fluidAdditionalAttributes:
+            placeholder: Telefon
+      -
+        defaultValue: ''
+        validators:
+          -
+            identifier: EmailAddress
+          -
+            identifier: NotEmpty
+        type: Email
+        identifier: email-1
+        label: 'Email address'
+        properties:
+          fluidAdditionalAttributes:
+            required: required

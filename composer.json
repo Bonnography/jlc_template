@@ -18,7 +18,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Cbw\\CbwTemplate\\": "Classes/"
+            "Cbw\\JlcTemplate\\": "Classes/"
         }
     },
     "extra": {

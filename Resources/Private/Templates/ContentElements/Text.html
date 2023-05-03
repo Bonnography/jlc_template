@@ -24,7 +24,7 @@
                        </div>
                    </f:then>
                    <f:else>
-                       <div class="col-12 {f:if(condition:'{data.textFullwidth} == 1', then: '', else: 'col-lg-9 ')}">
+                       <div class="col-12 bodytext {f:if(condition:'{data.textFullwidth} == 1', then: '', else: 'col-lg-9 ')}">
                            <f:format.html parseFuncTSPath="lib.parseFunc_RTE"><f:spaceless>{data.bodytext}</f:spaceless></f:format.html>
                        </div>
                    </f:else>

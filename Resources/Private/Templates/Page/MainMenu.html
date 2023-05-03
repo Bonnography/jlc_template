@@ -1,75 +1,34 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:layout name="MainMenu"/>
+<f:layout name="Default" />
 <f:section name="Main">
-    <div class="menu">
-        <f:if condition="{mainnavigation}">
-            <nav id="menu-main" class="menu-main">
-                <ul class="menu-main__list">
-                    <f:for each="{mainnavigation}" as="listitem">
-                        <li class="menu-main__list-item lvl1 {f:if(condition: listitem.active, then: 'active')} {f:if(condition: listitem.children, then: 'w-submenu')}">
-                            <a class="menu-main__list-item__link lvl1" href="{listitem.link}" title="{listitem.data.title} - Link">{listitem.data.title}</a>
-                            <f:if condition="{listitem.children}">
-                                <span class="w-submenu__opener lvl1 text-center {f:if(condition: listitem.active, then: 'open')} d-xl-none"><i
-                                        class="fas fa-chevron-down"></i></span>
-                                <ul class="menu-main__sub lvl2">
-                                    <f:for each="{listitem.children}" as="lvl2Item">
-                                        <li class="menu-main__sub-item lvl2 {f:if(condition: lvl2Item.active, then: 'active')} {f:if(condition: '({lvl2Item.data.doktype} == 4 && {lvl2Item.data.shortcut} == {data.uid})', then: 'active')}">
-                                            <a href="{lvl2Item.link}" class="menu-main__sub-item_link lvl2" title="{lvl2Item.data.title} - Link">{lvl2Item.data.title}</a>
-                                        </li>
-                                    </f:for>
-                                </ul>
+
+    <f:if condition="{menu}">
+        <nav id="menu-main">
+            <ul class="menu-main__list">
+                <f:for each="{menu}" as="page">
+                    <f:if condition="{page.content}">
+                        <f:for each="{page.content}" as="element" iteration="iterator">
+                            <f:if condition="{element.data.header}">
+                                <li class="menu-main_item lvl1 ">
+                                    <a class="menu-main_item__link lvl1 {f:if(condition: '{iterator.isFirst}', then: 'active')}" href="{page.link}#c{element.data.uid}"{f:if(condition: page.target, then: ' target="{page.target}"')} title="{element.data.header}">
+                                    <f:if condition="{iterator.isFirst}">
+                                        <f:then>
+                                            Startseite
+                                        </f:then>
+                                        <f:else>
+                                            <span>{element.data.header}</span>
+                                        </f:else>
+                                    </f:if>
+
+                                    </a>
+                                </li>
                             </f:if>
-                        </li>
-                    </f:for>
-                </ul>
-            </nav>
-            <f:if condition="{languageMenu.1.available}">
-                <nav id="menu-language" class="menu-language">
-                    <ul class="menu-language_list">
-                        <f:for each="{languageMenu}" as="languages">
-                            <li class="{f:if(condition: languages.active, then: 'active')}">
-                                <f:if condition="{languages.available}">
-                                    <f:then>
-                                        <f:if condition="{languages.active}">
-                                            <f:then>
-                                                <span> <f:format.case>{languages.twoLetterIsoCode}</f:format.case></span>
-                                            </f:then>
-                                            <f:else>
-                                                <a href="{languages.link}" hreflang="{languages.hreflang}"
-                                                   title="{languages.title}">
-                                                    <f:format.case>{languages.twoLetterIsoCode}</f:format.case>
-                                                </a>
-                                            </f:else>
-                                        </f:if>
-                                    </f:then>
-                                    <f:else>
-                                        <span> <f:format.case>{languages.twoLetterIsoCode}</f:format.case></span>
-                                    </f:else>
-                                </f:if>
-                            </li>
                         </f:for>
-                    </ul>
-                </nav>
-            </f:if>
-            <div class="d-none d-xl-block menu-search-wrapper">
-                <div class="menu-search">
-                    <f:form class="menu-search__form" pageUid="{searchPid}" method="post" id="tx_indexedsearch" action="search" extensionName="IndexedSearch" pluginName="pi2" controller="Search" additionalAttributes="{autocomplete: 'off'}">
-                        <fieldset>
-                            <div class="tx-indexedsearch-form" id="desktopSearch">
-                                <input placeholder="Suche" class="tx-indexedsearch-searchbox-sword"
-                                       id="tx-indexedsearch-searchbox-sword desktopSearchBarInput" type="text"
-                                       name="tx_indexedsearch_pi2[search][sword]" value=""/>
-                                <button class="tx-indexedsearch-searchbox-button searchLens"
-                                        id="tx-indexedsearch-searchbox-button-submit desktopSearchBarButton" type="submit" value="Suchen"
-                                        name="tx_indexedsearch_pi2[search][submitButton]">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                            </div>
-                        </fieldset>
-                    </f:form>
-                </div>
-            </div>
-        </f:if>
-    </div>
+                    </f:if>
+                </f:for>
+            </ul>
+        </nav>
+    </f:if>
+
 </f:section>
 </html>

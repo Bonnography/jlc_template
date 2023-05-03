@@ -9,7 +9,7 @@ TCEFORM {
         layout {
             altLabels {
                 0 = normal
-                1 = muh
+                1 = Light Gray
                 2 = zxv
                 3 = xyz
             }

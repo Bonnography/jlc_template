@@ -14,6 +14,6 @@ call_user_func(function()
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
         $extensionKey,
         'Configuration/TypoScript/main',
-        'CodeBomb Template'
+        'Jens Lehmann Construction Template'
     );
 });

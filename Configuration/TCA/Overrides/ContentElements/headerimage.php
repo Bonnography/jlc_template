@@ -2,7 +2,7 @@
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
     array(
         'Header Image',
-        'headerImage',
+        'headerimage',
         'EXT:jlc_template/Resources/Public/images/backend/icon.svg'
     ),
     'CType',
@@ -13,21 +13,14 @@ $headerimage = [
 ];
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $headerimage);
 
-$GLOBALS['TCA']['tt_content']['palettes']['cards_palette']['showitem'] = '
-     colPos, sys_language_uid, l10n_parent,
-    --linebreak--,
-    image,
-      --linebreak--,
-    cardsitem_header,
-    --linebreak--,
-    bodytext;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext_formlabel,
-';
 
-
-$GLOBALS['TCA']['tt_content']['types']['cards']['showitem'] = '
+$GLOBALS['TCA']['tt_content']['types']['headerimage']['showitem'] = '
 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
     --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
-    --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.headers;header_text,card_layout,cardsitem,
+    --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.headers;header_text,
+    --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.images,
+                    image,
+                    --palette--;;mediaAdjustments,
 --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.appearanceLinks;appearanceLinks,

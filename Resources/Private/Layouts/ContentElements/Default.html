@@ -3,7 +3,7 @@
     <f:switch expression="{data.CType}">
         <f:case value="text">
             <div id="c{data.uid}"
-                 class="content text {f:render(partial:'Background/Background', arguments:'{data: data}')}">
+                 class="content text section {f:render(partial:'Background/Background', arguments:'{data: data}')}">
                 <div class="row">
                     <f:render section="Main" optional="true"/>
                 </div>
@@ -11,12 +11,34 @@
         </f:case>
         <f:case value="cards">
             <div id="c{data.uid}"
-                 class="content cards {f:render(partial:'Background/Background', arguments:'{data: data}')}">
+                 class="content cards section {f:render(partial:'Background/Background', arguments:'{data: data}')}">
+                <f:render section="Main" optional="true"/>
+            </div>
+        </f:case>
+        <f:case value="headerimage">
+            <div id="c{data.uid}" class="section headerimage">
+                <f:render section="Main" optional="true"/>
+            </div>
+        </f:case>
+        <f:case value="teaserLink">
+            <div id="c{data.uid}" class="content teaser section {f:render(partial:'Background/Background', arguments:'{data: data}')}">
+                <f:render section="Main" optional="true"/>
+            </div>
+        </f:case>
+        <f:case value="textmedia">
+            <div id="c{data.uid}"
+                 class="content textmedia section {f:render(partial:'Background/Background', arguments:'{data: data}')}">
+                <f:render section="Main" optional="true"/>
+            </div>
+        </f:case>
+        <f:case value="contact">
+            <div id="c{data.uid}"
+                 class="content contact section {f:render(partial:'Background/Background', arguments:'{data: data}')}">
                 <f:render section="Main" optional="true"/>
             </div>
         </f:case>
         <f:case value="form_formframework">
-            <div id="c{data.uid}" class="formular">
+            <div id="c{data.uid}" class="content formular section {f:render(partial:'Background/Background', arguments:'{data: data}')}">
                 <div class="row">
                     <div class="col-12">
                         <f:render section="Main" optional="true"/>
@@ -26,11 +48,7 @@
         </f:case>
 
         <f:defaultCase>
-            <div class="row">
-                <div class="col-12">
-                    <f:render section="Main" optional="true"/>
-                </div>
-            </div>
+            <f:render section="Main" optional="true"/>
         </f:defaultCase>
     </f:switch>
 

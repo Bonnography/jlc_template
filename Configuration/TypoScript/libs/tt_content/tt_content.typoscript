@@ -30,6 +30,31 @@ tt_content {
             10 = EXT:jlc_template/Resources/Private/Layouts/ContentElements/
         }
     }
+    headerimage < lib.contentElement
+    headerimage {
+        templateName = Headerimage
+        templateRootPaths {
+            10 = EXT:jlc_template/Resources/Private/Templates/ContentElements/
+        }
+
+        partialRootPaths {
+            10 = EXT:jlc_template/Resources/Private/Partials/ContentElements/
+        }
+
+        layoutRootPaths {
+            10 = EXT:jlc_template/Resources/Private/Layouts/ContentElements/
+        }
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            10 {
+                references {
+                    table = tt_content
+                    fieldName = image
+                }
+                as = images
+            }
+        }
+    }
     cards < lib.contentElement
     cards {
         templateName = Cards
@@ -46,7 +71,7 @@ tt_content {
         }
 
         dataProcessing {
-            10 = Cbw\CbwTemplate\DataProcessing\ChildContentElementProcessor
+            10 = JLC\JlcTemplate\DataProcessing\ChildContentElementProcessor
             10 {
                 references {
                     fieldName = cards_container
@@ -57,10 +82,52 @@ tt_content {
             }
         }
     }
+    teaserLink < lib.contentElement
+    teaserLink {
+        templateName = TeaserLink
+        templateRootPaths {
+            10 = EXT:jlc_template/Resources/Private/Templates/ContentElements/
+        }
+
+        partialRootPaths {
+            10 = EXT:jlc_template/Resources/Private/Partials/ContentElements/
+        }
+
+        layoutRootPaths {
+            10 = EXT:jlc_template/Resources/Private/Layouts/ContentElements/
+        }
+
+        dataProcessing.10 = Cbw\CbwTemplate\DataProcessing\ChildContentElementProcessor
+        dataProcessing.10 {
+            references {
+                table = tt_content
+                fieldName = teaserItem_container
+            }
+            as = teaserItem
+        }
+    }
+    contact < lib.contentElement
+    contact {
+        templateName = Contact
+        templateRootPaths {
+            10 = EXT:jlc_template/Resources/Private/Templates/ContentElements/
+        }
+
+        partialRootPaths {
+            10 = EXT:jlc_template/Resources/Private/Partials/ContentElements/
+        }
+
+        layoutRootPaths {
+            10 = EXT:jlc_template/Resources/Private/Layouts/ContentElements/
+        }
+    }
 
     form_formframework {
+        partialRootPaths {
+            10 = EXT:jlc_template/Resources/Private/Partials/ContentElements/
+        }
         layoutRootPaths {
-            10 = EXT:stroeerx_template/Resources/Private/Layouts/ContentElements/
+            10 = EXT:jlc_template/Resources/Private/Layouts/ContentElements/
         }
     }
 }

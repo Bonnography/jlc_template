@@ -23,15 +23,7 @@ class CustomPageLayoutView implements PageLayoutViewDrawItemHookInterface {
         &$itemContent,
         array &$row
     ) {
-        if ($row['CType'] === 'awards') {
-            if ($row['bodytext']) {
-                $bodytext = GeneralUtility::fixed_lgd_cs($row['headline'], 1000);
-                $itemContent .= $parentObject->linkEditContent($bodytext, $row);
-            }
-
-            $drawItem = false;
-        }
-        if ($row['CType'] === 'headerImage') {
+        if ($row['CType'] === 'headerimage') {
             if ($row['assets']) {
                 $headerContent .= $parentObject->linkEditContent('<strong>Header Image</strong>', $row);
                 $fileReferences = BackendUtility::resolveFileReferences('tt_content', 'assets', $row);

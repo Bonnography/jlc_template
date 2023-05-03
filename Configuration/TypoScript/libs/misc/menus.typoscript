@@ -12,7 +12,7 @@ lib.menu-main-fluid {
     }
 
     layoutRootPaths {
-        0 = EXT:jlc_template/Resources/Private/Layouts/Page
+        0 = EXT:jlc_template/Resources/Private/Layouts/Page/Backendlayouts/
     }
 
     partialRootPaths {
@@ -21,21 +21,50 @@ lib.menu-main-fluid {
     dataProcessing {
         10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
         10 {
-            entryLevel = 0
-            levels = 3
-            includeSpacer = 1
-            as = mainnavigation
+            // Always activate includeNotInMenu for a section menu of the current page
+            includeNotInMenu.override = 1
+            includeNotInMenu.override.if.isFalse.field = pages
+            special = list
+            special {
+                value {
+                    field = pages
+                    override {
+                        data = 4
+                        if {
+                            isFalse.field = pages
+                        }
+
+                        // Currrent page uses content of another page
+                        override {
+                            data = page:content_from_pid
+                            if {
+                                isTrue.data = page:content_from_pid
+                            }
+                        }
+                    }
+                }
+            }
             dataProcessing {
                 10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
                 10 {
                     references.fieldName = media
                 }
+                20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+                20 {
+                    table = tt_content
+                    pidInList.field = uid
+                    as = content
+                    where = sectionIndex = 1
+                    orderBy = sorting
+                    dataProcessing {
+                        10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+                        10 {
+                            references.fieldName = image
+                        }
+                    }
+                }
             }
         }
-    }
-    variables {
-        searchPid = TEXT
-        searchPid.value = {$page.search}
     }
 }
 

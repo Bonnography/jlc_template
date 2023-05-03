@@ -8,17 +8,3 @@
         sys_language_mode = strict
     }
 [END]
-
-lib.embeddedForm = FLUIDTEMPLATE
-lib.embeddedForm {
-    template = TEXT
-    template {
-        value = <formvh:render persistenceIdentifier="EXT:jlc_template/Resources/Private/Templates/form/Forms/codeBombContact.form.yaml" />
-    }
-    extbase {
-        pluginName = Formframework
-        controllerExtensionName = Form
-        controllerName = FormFrontend
-        controllerActionName = perform
-    }
-}
