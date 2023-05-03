@@ -14,5 +14,3 @@ $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['teaser'] = 'EXT:jlc_template/Conf
 
 
 $GLOBALS['TYPO3_CONF_VARS']['FE']['hidePagesIfNotTranslatedByDefault'] = 1;
-$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawItem']['jlc_template'] =
-    'Cbw\\CbwTemplate\\Hooks\\CustomPageLayoutView';

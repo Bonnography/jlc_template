@@ -3,10 +3,10 @@ TYPO3:
     Form:
       persistenceManager:
         allowedFileMounts:
-          10: EXT:cbw_template/Resources/Private/Templates/form/Forms/
+          10: EXT:jlc_template/Resources/Private/Templates/form/Forms/
         # Path to save created formulars
         allowedExtensionPaths:
-          10: EXT:cbw_template/Resources/Private/Templates/form/Forms/
+          10: EXT:jlc_template/Resources/Private/Templates/form/Forms/
         # allow saving formular from backend
         allowSaveToExtensionPaths: true
         # allow deleating formular from backend
