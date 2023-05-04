@@ -47,50 +47,6 @@ plugin.tx_seo {
                         additionalWhere = {$plugin.tx_seo.settings.xmlSitemap.sitemaps.pages.additionalWhere}
                     }
                 }
-                jobs {
-                    provider = TYPO3\CMS\Seo\XmlSitemap\RecordsXmlSitemapDataProvider
-                    config {
-                        table = tx_jobboerse_domain_model_jobs
-                        sortField = uid
-                        lastModifiedField = crdate
-                        pid = {$page.data.jobs}
-                        url {
-                            pageId = {$page.jobsPageUid}
-                            fieldToParameterMap {
-                                uid = tx_jobboerse_displayjobs[jobs]
-                            }
-                            additionalGetParameters {
-                                tx_jobboerse_displayjobs.controller = Jobs
-                                tx_jobboerse_displayjobs.action = show
-                            }
-                            useCacheHash = 1
-                        }
-                    }
-                }
-                news {
-                    provider = TYPO3\CMS\Seo\XmlSitemap\RecordsXmlSitemapDataProvider
-                    config {
-                        table = tx_news_domain_model_news
-                        additionalWhere =
-                        sortField = sorting
-                        lastModifiedField = tstamp
-                        pid = {$page.data.news}
-                        recursive = 2
-                        url {
-                            pageId = {$page.news}
-                            fieldToParameterMap {
-                                uid = tx_news_pi1[news]
-                            }
-
-                            additionalGetParameters {
-                                tx_news_pi1.controller = News
-                                tx_news_pi1.action = detail
-                            }
-
-                            useCacheHash = 1
-                        }
-                    }
-                }
             }
         }
     }

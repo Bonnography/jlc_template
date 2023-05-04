@@ -23,35 +23,11 @@ page {
     # cat=basic/Page/20; type=int+; label=Speicherplatz Job Ajax
     data.ajax_page.typeNum = 545443
     # cat=basic/Page/30; type=int+; label=Impressumsseite
-    imprint = 5
+    imprint = 9
     # cat=basic/Page/40; type=int+; label=Datenschutz
-    privacy = 6
+    privacy = 10
     # cat=basic/Page/50; type=int+; label=Kontaktseite
     contact = 23
-    # cat=basic/Page/90; type=int+; label=stores
-    data.locationer = 19
-    # cat=basic/Page/100; type=int+; label=contactperson
-    data.contactperson = 22
-    # cat=basic/Page/130; type=int+; label=news
-    data.news_list_back = 7
-    # cat=basic/Page/140; type=int+; label=news
-    news = 7
-    # cat=basic/Page/150; type=int+; label=search
-    search = 12
-    # cat=basic/Page/160; type=int+; label=companyPageUid
-    companyPageUid = 5
-    # cat=basic/Page/170; type=int+; label=careerPageUid
-    careerPageUid = 6
-    # cat=basic/Page/180; type=int+; label=jobsPageUid
-    jobsPageUid = 32
-    # cat=basic/Page/190; type=int+; label=careerStarters
-    careerStartersUid = 33
-    # cat=basic/Page/200; type=int+; label=careerProfessionals
-    careerProfessionalsUid = 34
-    # cat=basic/Page/210; type=int+; label=careerManagement
-    careerManagementUid = 35
-    # cat=basic/Page/220; type=int+; label=pageDataNews
-    data.news = 20
 }
 seo {
     GTM =

@@ -11,10 +11,6 @@ company {
     apple-touch-144 = typo3conf/ext/jlc_template/Resources/Public/images/apple-touch-icon-144x144.png
     # cat=basic/SocialMedia/80; type=string; label=Favicon
     mstile = typo3conf/ext/jlc_template/Resources/Public/images/mstile-150x150.png
-    # cat=basic/Page/100; type=int+; label=linkedIn
-    linkedin = https://www.linkedin.com/in/benjamin-bomberg-95b17b165/
-    # cat=basic/Page/110; type=int+; label=xing
-    xing = https://www.xing.com/profile/Benjamin_Bomberg/cv
 }
 
 page {

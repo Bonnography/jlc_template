@@ -8,18 +8,7 @@
 </head>
 <body>
 <p>
-    <f:switch expression="{form.formState.formValues.salutation}">
-        <f:case value="Herr">
-            Sehr geehrter {form.formState.formValues.salutation} {form.formState.formValues.firstname} {form.formState.formValues.lastname},
-        </f:case>
-        <f:case value="Frau">
-            Sehr geehrte {form.formState.formValues.salutation} {form.formState.formValues.firstname} {form.formState.formValues.lastname},
-        </f:case>
-        <f:case value="Divers">
-            Sehr geehrte*r {form.formState.formValues.firstname} {form.formState.formValues.lastname},
-        </f:case>
-        <f:defaultCase>...</f:defaultCase>
-    </f:switch>
+    Hallo {form.formState.formValues.text-1} {form.formState.formValues.text-2}
 
     ich bestätigen hiermit den Eingang Ihrer Kontaktanfrage und bedanke mich für das entgegengebrachte Interesse an meinem Unternehmen.
     <br />
@@ -29,16 +18,14 @@
 <div class="confirmation_contact">
 
     <p><strong>Ansprechpartner</strong></p>
-    <p>{form.formState.formValues.salutation} {form.formState.formValues.firstname} {form.formState.formValues.lastname}
-        <f:if condition="{form.formState.formValues.company}"><br>{form.formState.formValues.company}</f:if>
-        <f:if condition="{form.formState.formValues.company}"><br>{form.formState.formValues.position}</f:if>
-        <f:if condition="{form.formState.formValues.email}"><br>{form.formState.formValues.email}</f:if>
-        <f:if condition="{form.formState.formValues.telephone}"><br>Tel.: {form.formState.formValues.telephone}</f:if>
+    <p>{form.formState.formValues.salutation} {form.formState.formValues.text-1} {form.formState.formValues.text-2}
+        <f:if condition="{form.formState.formValues.email-1}"><br>{form.formState.formValues.email-1}</f:if>
+        <f:if condition="{form.formState.formValues.telephone}"><br>Tel.: {form.formState.formValues.telephone-1}</f:if>
     </p>
 
     <f:if condition="{form.formState.formValues.message}">
         <p><strong>Ihre Mitteilung</strong></p>
-        <p>{form.formState.formValues.message}</p>
+        <p>{form.formState.formValues.message-1}</p>
     </f:if>
 
     <formvh:renderAllFormValues renderable="{form.formDefinition}" as="formValue">
@@ -54,13 +41,13 @@
 <p>Nach Bearbeitung Ihres Anliegens werden wir uns wieder mit Ihnen in Verbindung setzen. Haben Sie noch eine Frage? Dann zögern Sie nicht, mich erneut zu kontaktieren!</p>
 <p>
     Mit freundlichen Grüßen<br/>
-    Benjamin Bomberg - CodeBomb Websolutions
+    Jens Lehmann - Lehmann Construction
 </p>
 <p>
-    <strong>CodeBomb - Websolutions </strong> <br/>
-    Papiermühlstraße 11 <br/>
-    D-04299 Leipzig<br/>
-    Mail: info@codebomb-websolutions.de
+    <strong>Lehmann Construction</strong> <br/>
+    Liechtensteinstraße 10 <br/>
+    D-04279 Leipzig<br/>
+    Mail: info@lehmann-construction.de
 </p>
 
 
